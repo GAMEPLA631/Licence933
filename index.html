@@ -7,54 +7,94 @@
     <!-- Načítanie Tailwind CSS pre moderný dizajn -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Nastavenie písma Inter (predvolené v Tailwind) a ľahkého pozadia */
+        /* --- Dark Theme & Global Colors --- */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f7f7; /* Svetlosivé pozadie pre "Webnode" dojem */
+            background-color: #0d1117; /* Veľmi tmavé pozadie */
+            color: #e5e7eb; /* Svetlý text */
         }
-        /* Štýl pre formulárové prvky */
-        input:focus, textarea:focus {
-            border-color: #3b82f6; /* Modrý fokus */
+        
+        /* Hlavný kontajner a hlavička */
+        .main-card, header {
+            background-color: #1f2937;
+        }
+
+        /* Sekcie vo formulári */
+        .section-bg {
+            background-color: #2f3743;
+        }
+
+        /* Form element styles pre tmavý režim */
+        input, textarea, select {
+            background-color: #374151; /* Tmavé pozadie pre input */
+            color: #e5e7eb;
+            border: 1px solid #4b5563;
+        }
+        
+        /* Štýl pre focus/zameranie */
+        input:focus, textarea:focus, select:focus {
+            border-color: #3b82f6; 
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
             outline: none;
         }
+        
+        /* Upozorňovací box (Warning Box) v tmavom režime */
+        .warning-box {
+            background-color: #4a3400; 
+            border-left-color: #f59e0b; 
+            color: #fde68a; 
+        }
+
         /* Webnode-like primárna farba */
         .btn-primary {
             background-color: #10b981; /* Smaragdovo zelená */
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         .btn-primary:hover {
             background-color: #059669;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6); /* Pridanie zeleného žiaru pri hoveri */
+        }
+        
+        /* --- Animácia Písmen (Nadpis) --- */
+        @keyframes glowPulse {
+            0% { opacity: 0.8; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-1px); text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
+            100% { opacity: 0.8; transform: translateY(0); }
+        }
+
+        .animated-text {
+            animation: glowPulse 4s ease-in-out infinite alternate;
+            display: inline-block; /* Aby animácia fungovala na nadpise */
         }
     </style>
 </head>
 <body>
 
     <!-- Navigácia/Hlavička (Minimalistická) -->
-    <header class="bg-white shadow-md">
+    <header class="shadow-lg shadow-black/50">
         <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-800">
+            <h1 class="text-2xl font-bold text-gray-200">
                 Oficiálna Žiadosť
             </h1>
             <nav>
-                <a href="#formular" class="text-sm text-gray-600 hover:text-gray-900">Vyplniť Formulár</a>
+                <a href="#formular" class="text-sm text-gray-400 hover:text-white transition duration-200">Vyplniť Formulár</a>
             </nav>
         </div>
     </header>
 
     <!-- Hlavný obsah - Centrálny Kontajner -->
     <main id="formular" class="py-12 px-4">
-        <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-xl shadow-2xl">
+        <div class="max-w-4xl mx-auto main-card p-6 md:p-10 rounded-xl shadow-2xl shadow-black/70">
 
             <!-- Úvod a Dôležité Upozornenie -->
             <div class="text-center mb-10">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-3">
+                <h2 class="text-4xl font-extrabold text-gray-100 mb-3 animated-text">
                     Žiadosť o Povolenie na Použitie Obsahu
                 </h2>
-                <p class="text-lg text-gray-600">
+                <p class="text-lg text-gray-400">
                     Prosím, vyplňte tento formulár *kompletne* pre posúdenie vašej žiadosti o použitie nášho autorsky chráneného obsahu vo vašich videách na YouTube.
                 </p>
-                <div class="mt-4 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded-md">
+                <div class="mt-4 p-4 border-l-4 rounded-md warning-box">
                     <p class="font-semibold">⚠️ Upozornenie:</p>
                     <p class="text-sm">Neúplné alebo nepresné žiadosti nebudú spracované a môže dôjsť k udeleniu Copyright Strike.</p>
                 </div>
@@ -66,87 +106,87 @@
             <form action="https://formspree.io/f/mvgdreej" method="POST" class="space-y-6">
 
                 <!-- 1. Sekcia: Kontaktné Údaje -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-700 border-b pb-2">1. Vaše Kontaktné Údaje</h3>
+                <div class="p-6 section-bg rounded-lg shadow-inner">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-300 border-b border-gray-600 pb-2">1. Vaše Kontaktné Údaje</h3>
                     
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Vaše Meno / Názov spoločnosti <span class="text-red-500">*</span></label>
-                        <input type="text" id="name" name="Meno" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm" placeholder="Ján Novák">
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Vaše Meno / Názov spoločnosti <span class="text-red-400">*</span></label>
+                        <input type="text" id="name" name="Meno" required class="w-full rounded-lg p-3 shadow-sm placeholder-gray-500" placeholder="Ján Novák">
                     </div>
 
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Váš E-mail pre Odpoveď <span class="text-red-500">*</span></label>
-                        <input type="email" id="email" name="Email" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm" placeholder="vasa.adresa@priklad.sk">
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Váš E-mail pre Odpoveď <span class="text-red-400">*</span></label>
+                        <input type="email" id="email" name="Email" required class="w-full rounded-lg p-3 shadow-sm placeholder-gray-500" placeholder="vasa.adresa@priklad.sk">
                         <p class="text-xs text-gray-500 mt-1">Na tento e-mail dostanete odpoveď s rozhodnutím.</p>
                     </div>
 
                     <div>
-                        <label for="youtube_url" class="block text-sm font-medium text-gray-700 mb-1">URL Vášho YouTube Kanálu <span class="text-red-500">*</span></label>
-                        <input type="url" id="youtube_url" name="URL_YouTube_Kanálu" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm" placeholder="https://youtube.com/c/VášKanál">
+                        <label for="youtube_url" class="block text-sm font-medium text-gray-300 mb-1">URL Vášho YouTube Kanálu <span class="text-red-400">*</span></label>
+                        <input type="url" id="youtube_url" name="URL_YouTube_Kanálu" required class="w-full rounded-lg p-3 shadow-sm placeholder-gray-500" placeholder="https://youtube.com/c/VášKanál">
                     </div>
                 </div>
                 
                 <!-- 2. Sekcia: Pôvodný Obsah Tvorcu -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-700 border-b pb-2">2. Detaily o Mojom Pôvodnom Obsahu, Ktorý Chcete Použiť</h3>
+                <div class="p-6 section-bg rounded-lg shadow-inner">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-300 border-b border-gray-600 pb-2">2. Detaily o Mojom Pôvodnom Obsahu, Ktorý Chcete Použiť</h3>
                     
                     <div>
-                        <label for="original_title" class="block text-sm font-medium text-gray-700 mb-1">Presný Názov Pôvodného Videa <span class="text-red-500">*</span></label>
-                        <input type="text" id="original_title" name="Pôvodný_Názov" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm">
+                        <label for="original_title" class="block text-sm font-medium text-gray-300 mb-1">Presný Názov Pôvodného Videa <span class="text-red-400">*</span></label>
+                        <input type="text" id="original_title" name="Pôvodný_Názov" required class="w-full rounded-lg p-3 shadow-sm placeholder-gray-500">
                     </div>
                     
                     <div>
-                        <label for="original_url" class="block text-sm font-medium text-gray-700 mb-1">URL Pôvodného Videa <span class="text-red-500">*</span></label>
-                        <input type="url" id="original_url" name="Pôvodná_URL" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm">
+                        <label for="original_url" class="block text-sm font-medium text-gray-300 mb-1">URL Pôvodného Videa <span class="text-red-400">*</span></label>
+                        <input type="url" id="original_url" name="Pôvodná_URL" required class="w-full rounded-lg p-3 shadow-sm placeholder-gray-500">
                     </div>
 
                     <div>
-                        <label for="timestamps" class="block text-sm font-medium text-gray-700 mb-1">Konkrétne Časové Úseky (Timestampy) <span class="text-red-500">*</span></label>
-                        <textarea id="timestamps" name="Časové_Úseky" rows="3" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm" placeholder="Príklad: 0:45-1:15 (30 sekúnd), 5:00-5:10 (10 sekúnd). Uveďte všetky."></textarea>
+                        <label for="timestamps" class="block text-sm font-medium text-gray-300 mb-1">Konkrétne Časové Úseky (Timestampy) <span class="text-red-400">*</span></label>
+                        <textarea id="timestamps" name="Časové_Úseky" rows="3" required class="w-full rounded-lg p-3 shadow-sm placeholder-gray-500" placeholder="Príklad: 0:45-1:15 (30 sekúnd), 5:00-5:10 (10 sekúnd). Uveďte všetky."></textarea>
                         <p class="text-xs text-gray-500 mt-1">Celkový čas nesmie presiahnuť 3 minúty (alebo podľa vašich pravidiel).</p>
                     </div>
                 </div>
 
                 <!-- 3. Sekcia: Spôsob a Dôvod Použitia -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-700 border-b pb-2">3. Detaily o Vašom Novom Videu</h3>
+                <div class="p-6 section-bg rounded-lg shadow-inner">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-300 border-b border-gray-600 pb-2">3. Detaily o Vašom Novom Videu</h3>
                     
                     <div>
-                        <label for="your_video_title" class="block text-sm font-medium text-gray-700 mb-1">Názov Vášho Nového Videa (Predpokladaný) <span class="text-red-500">*</span></label>
-                        <input type="text" id="your_video_title" name="Názov_Vášho_Videa" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm">
+                        <label for="your_video_title" class="block text-sm font-medium text-gray-300 mb-1">Názov Vášho Nového Videa (Predpokladaný) <span class="text-red-400">*</span></label>
+                        <input type="text" id="your_video_title" name="Názov_Vášho_Videa" required class="w-full rounded-lg p-3 shadow-sm placeholder-gray-500">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Účel Použitia <span class="text-red-500">*</span></label>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Účel Použitia <span class="text-red-400">*</span></label>
                         <div class="space-y-2">
                             <label class="flex items-center">
-                                <input type="radio" name="Účel" value="Reakcia/Komentár" required class="text-green-500 border-gray-300 focus:ring-green-500">
-                                <span class="ml-2 text-gray-700">Reakcia/Komentár/Recenzia (Transformačné použitie)</span>
+                                <input type="radio" name="Účel" value="Reakcia/Komentár" required class="text-green-500 border-gray-700 focus:ring-green-500 bg-gray-600">
+                                <span class="ml-2 text-gray-300">Reakcia/Komentár/Recenzia (Transformačné použitie)</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="radio" name="Účel" value="Informatívne/Vzdelávacie" required class="text-green-500 border-gray-300 focus:ring-green-500">
-                                <span class="ml-2 text-gray-700">Informatívne/Vzdelávacie</span>
+                                <input type="radio" name="Účel" value="Informatívne/Vzdelávacie" required class="text-green-500 border-gray-700 focus:ring-green-500 bg-gray-600">
+                                <span class="ml-2 text-gray-300">Informatívne/Vzdelávacie</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="radio" name="Účel" value="Priama reprodukcia (Kompilácia)" required class="text-green-500 border-gray-300 focus:ring-green-500">
-                                <span class="ml-2 text-gray-700">Priama reprodukcia (Kompilácia) - *Vyžaduje zvláštne povolenie*</span>
+                                <input type="radio" name="Účel" value="Priama reprodukcia (Kompilácia)" required class="text-green-500 border-gray-700 focus:ring-green-500 bg-gray-600">
+                                <span class="ml-2 text-gray-300">Priama reprodukcia (Kompilácia) - *Vyžaduje zvláštne povolenie*</span>
                             </label>
                         </div>
                     </div>
 
                     <div>
-                        <label for="justification" class="block text-sm font-medium text-gray-700 mb-1">Podrobné Zdôvodnenie Použitia <span class="text-red-500">*</span></label>
-                        <textarea id="justification" name="Zdôvodnenie" rows="5" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm" placeholder="Vysvetlite, prečo potrebujete použiť môj klip a akú hodnotu alebo komentár pridávate, aby bolo vaše video považované za 'fair use' (spravodlivé použitie)."></textarea>
+                        <label for="justification" class="block text-sm font-medium text-gray-300 mb-1">Podrobné Zdôvodnenie Použitia <span class="text-red-400">*</span></label>
+                        <textarea id="justification" name="Zdôvodnenie" rows="5" required class="w-full rounded-lg p-3 shadow-sm placeholder-gray-500" placeholder="Vysvetlite, prečo potrebujete použiť môj klip a akú hodnotu alebo komentár pridávate, aby bolo vaše video považované za 'fair use' (spravodlivé použitie)."></textarea>
                     </div>
                 </div>
 
                 <!-- 4. Sekcia: Finančné a Súhlasy -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-inner">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-700 border-b pb-2">4. Monetizácia a Súhlas</h3>
+                <div class="p-6 section-bg rounded-lg shadow-inner">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-300 border-b border-gray-600 pb-2">4. Monetizácia a Súhlas</h3>
                     
                     <div>
-                        <label for="monetization" class="block text-sm font-medium text-gray-700 mb-2">Budete toto video monetizovať (zarábať na ňom peniaze)? <span class="text-red-500">*</span></label>
-                        <select id="monetization" name="Monetizácia" required class="w-full border-gray-300 rounded-lg p-3 shadow-sm">
+                        <label for="monetization" class="block text-sm font-medium text-gray-300 mb-2">Budete toto video monetizovať (zarábať na ňom peniaze)? <span class="text-red-400">*</span></label>
+                        <select id="monetization" name="Monetizácia" required class="w-full rounded-lg p-3 shadow-sm">
                             <option value="">-- Vyberte možnosť --</option>
                             <option value="Áno">Áno, video bude monetizované.</option>
                             <option value="Nie">Nie, video nebude monetizované.</option>
@@ -156,9 +196,9 @@
 
                     <div class="mt-4">
                         <label class="flex items-start">
-                            <input type="checkbox" name="Súhlas_s_pravidlami" value="Potvrdené" required class="mt-1 text-green-500 border-gray-300 focus:ring-green-500 rounded">
-                            <span class="ml-2 text-sm text-gray-700">
-                                Potvrdzujem, že všetky uvedené informácie sú pravdivé a rozumiem, že povolenie je podmienené dodržaním mojich pravidiel (uvedenie zdroja v popise atď.). <span class="text-red-500">*</span>
+                            <input type="checkbox" name="Súhlas_s_pravidlami" value="Potvrdené" required class="mt-1 text-green-500 border-gray-700 focus:ring-green-500 rounded bg-gray-600">
+                            <span class="ml-2 text-sm text-gray-300">
+                                Potvrdzujem, že všetky uvedené informácie sú pravdivé a rozumiem, že povolenie je podmienené dodržaním mojich pravidiel (uvedenie zdroja v popise atď.). <span class="text-red-400">*</span>
                             </span>
                         </label>
                     </div>
@@ -177,7 +217,7 @@
     </main>
 
     <!-- Pätka (Footer) Webnode štýlu -->
-    <footer class="text-center py-6 bg-gray-200 text-gray-600 text-sm mt-10 border-t border-gray-300">
+    <footer class="text-center py-6 text-gray-400 text-sm mt-10 border-t border-gray-700 bg-[#1f2937]">
         Vytvorené pre Vás | &copy; Váš Tvorca 2024. Všetky práva vyhradené. | <span class="font-bold">Powered by Webnode Clone</span>
     </footer>
 
