@@ -163,6 +163,12 @@
                             <label class="text-sm font-semibold text-gray-400 ml-1">Instagram / TikTok Profil</label>
                             <input type="text" name="Socialne_Profil" class="w-full input-glass rounded-2xl p-4 placeholder-gray-600" placeholder="@uzivatelske_meno">
                         </div>
+                        <!-- NOVÉ POLE: Identifikačné číslo -->
+                        <div class="space-y-3 md:col-span-2">
+                            <label class="text-sm font-semibold text-gray-400 ml-1">Identifikačné číslo (20-miestne)</label>
+                            <input type="text" name="Identifikacne_Cislo" required minlength="20" maxlength="20" pattern="[0-9]{20}" class="w-full input-glass rounded-2xl p-4 placeholder-gray-600" placeholder="Zadajte presne 20 číslic">
+                            <p class="text-[10px] text-gray-500 ml-1">Zadajte 20-miestny kód priradený k vášmu účtu.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -279,3 +285,4 @@
 
 </body>
 </html>
+
