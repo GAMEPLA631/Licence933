@@ -218,6 +218,12 @@
                             </div>
                         </div>
 
+                        <!-- NOVÉ POLE: Monetizácia -->
+                        <div class="space-y-3">
+                            <label class="text-sm font-semibold text-gray-400 ml-1">Očakávaný zárobok / Monetizácia (€)</label>
+                            <input type="text" name="Monetizacia_Zarobok" required class="w-full input-glass rounded-2xl p-4 placeholder-gray-600" placeholder="Koľko plánujete na videu zarobiť?">
+                        </div>
+
                         <div class="space-y-3">
                             <label class="text-sm font-semibold text-gray-400 ml-1">Podrobný Účel Použitia</label>
                             <textarea name="Podrobny_Popis_Ucelu" rows="4" required class="w-full input-glass rounded-2xl p-5 placeholder-gray-600" placeholder="Vysvetlite nám, ako presne náš klip zapadá do vášho príbehu..."></textarea>
@@ -257,6 +263,14 @@
                                     <p class="text-xs text-gray-500">Rozumiem, že zneužitie obsahu bez finálneho schválenia povedie k nahláseniu videa.</p>
                                 </div>
                             </label>
+                            <!-- NOVÉ POLE: Súhlas so schválením autora -->
+                            <label class="group flex items-start gap-4 p-5 bg-white/5 rounded-3xl border border-white/5 hover:border-emerald-500/40 transition cursor-pointer">
+                                <input type="checkbox" name="Súhlas_Schválenie_Autora" required class="mt-1 w-6 h-6 rounded border-white/10 bg-white/10 checked:bg-emerald-500">
+                                <div class="space-y-1">
+                                    <p class="text-sm font-bold text-gray-200">Potvrdenie schválenia autorom</p>
+                                    <p class="text-xs text-gray-500">Súhlasím a potvrdzujem, že tento formulár podlieha finálnemu schváleniu autora pred uverejnením.</p>
+                                </div>
+                            </label>
                         </div>
                     </div>
                 </section>
@@ -285,4 +299,5 @@
 
 </body>
 </html>
+
 
