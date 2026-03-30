@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium License Request | Copyright Portal</title>
+    <title>Žiadosť o použitie obsahu | Kontakt</title>
     <!-- Načítanie Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & Plus Jakarta Sans -->
@@ -113,13 +113,13 @@
             <div class="flex items-center gap-4 group cursor-pointer">
                 <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:rotate-6 transition-transform">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                 </div>
-                <span class="text-2xl font-bold tracking-tight">Licenčný<span class="text-emerald-500 font-extrabold ml-1">Portál</span></span>
+                <span class="text-2xl font-bold tracking-tight">Spolupráca<span class="text-emerald-500 font-extrabold ml-1">Video</span></span>
             </div>
             <a href="https://youtube.com" class="px-6 py-2.5 rounded-xl border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all text-sm font-semibold text-gray-300">
-                Zrušiť žiadosť
+                Späť
             </a>
         </div>
     </nav>
@@ -132,13 +132,13 @@
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                Systém Overovania Autorskej Licencie
+                Formulár pre povolenie k videám
             </div>
             <h1 class="text-6xl md:text-8xl font-extrabold mb-8 tracking-tighter leading-[0.9]">
-                Získajte <span class="text-gradient">Povolenie</span>
+                Chcem použiť <span class="text-gradient">tvoj obsah</span>
             </h1>
             <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-                Zabráňte Copyright Striku správnym podaním žiadosti. Po schválení obdržíte licenčný kód priamo na váš e-mail.
+                Vyplň tento krátky formulár a pošli mi info o tvojom projekte. Ak bude všetko v poriadku, ozvem sa ti e-mailom.
             </p>
         </div>
 
@@ -149,10 +149,9 @@
             <form action="https://formsubmit.co/el/vumume" method="POST" class="space-y-16">
                 
                 <!-- FormSubmit Konfigurácia -->
-                <input type="hidden" name="_subject" value="Nová žiadosť o licenciu!">
+                <input type="hidden" name="_subject" value="Nová správa od fanúšika/tvorcu">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="true">
-                <input type="hidden" name="_next" value="https://youtube.com"> <!-- Tu daj URL tvojej ďakovnej stránky -->
 
                 <!-- Sekcia 1: Identita -->
                 <section>
@@ -163,175 +162,106 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold tracking-tight">Osobné Údaje</h3>
-                            <p class="text-sm text-slate-500">Identifikujte sa ako legálny subjekt.</p>
+                            <h3 class="text-2xl font-bold tracking-tight">Kto si?</h3>
+                            <p class="text-sm text-slate-500">Povedz mi niečo o sebe.</p>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-400 ml-1">Meno / Brand</label>
-                            <input type="text" name="Meno_Ziadatela" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="napr. Peter Hruška">
+                            <label class="text-sm font-semibold text-slate-400 ml-1">Tvoje meno / Kanál</label>
+                            <input type="text" name="Meno_Tvorcu" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="napr. Peter Hruška">
                         </div>
                         <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-400 ml-1">Kontaktný E-mail</label>
-                            <input type="email" name="email" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="vas@email.sk">
+                            <label class="text-sm font-semibold text-slate-400 ml-1">E-mail na teba</label>
+                            <input type="email" name="email" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="tvoj@email.sk">
                         </div>
                         <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-400 ml-1">YouTube Link</label>
-                            <input type="url" name="YT_Kanal_URL" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="https://youtube.com/@... ">
+                            <label class="text-sm font-semibold text-slate-400 ml-1">Odkaz na tvoj YouTube</label>
+                            <input type="url" name="YT_Kanal" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="https://youtube.com/@... ">
                         </div>
                         <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-400 ml-1">Sociálne siete</label>
-                            <input type="text" name="Socialne_Siete" class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="@uzivatelske_meno">
+                            <label class="text-sm font-semibold text-slate-400 ml-1">Instagram / Iné</label>
+                            <input type="text" name="Socialne_Siete" class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="@meno">
                         </div>
                         <div class="space-y-3 md:col-span-2">
-                            <label class="text-sm font-semibold text-slate-400 ml-1">Identifikačné číslo (20-miestne)</label>
-                            <input type="text" name="Identifikacne_Cislo" required minlength="20" maxlength="20" pattern="[0-9]{20}" class="w-full input-glass rounded-2xl p-4 placeholder-slate-700 tracking-widest" placeholder="0000 0000 0000 0000 0000">
-                            <div class="flex items-center gap-2 mt-2 ml-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <p class="text-[10px] text-slate-600 uppercase font-bold tracking-wider">Povinný bezpečnostný identifikátor priradený k vášmu účtu.</p>
-                            </div>
+                            <label class="text-sm font-semibold text-slate-400 ml-1">Tvoj kód (ID kód)</label>
+                            <input type="text" name="ID_Kod" required minlength="20" maxlength="20" pattern="[0-9]{20}" class="w-full input-glass rounded-2xl p-4 placeholder-slate-700 tracking-widest" placeholder="20-miestne číslo">
+                            <p class="text-[10px] text-slate-600 mt-2 ml-1">Zadaj kód, ktorý ti bol vygenerovaný v tvojom profile.</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Sekcia 2: Analýza Využitia -->
+                <!-- Sekcia 2: Video -->
                 <section>
                     <div class="flex items-center gap-5 mb-10">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 ring-1 ring-emerald-500/20">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold tracking-tight">Špecifikácia Obsahu</h3>
-                            <p class="text-sm text-slate-500">Definujte rozsah použitia našich diel.</p>
+                            <h3 class="text-2xl font-bold tracking-tight">O aké video ide?</h3>
+                            <p class="text-sm text-slate-500">Povedz mi, čo presne chceš použiť.</p>
                         </div>
                     </div>
 
                     <div class="space-y-8">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="space-y-3">
-                                <label class="text-sm font-semibold text-slate-400 ml-1">Video na použitie (URL)</label>
-                                <input type="url" name="Zdrojove_Video_URL" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="Link na video autora">
+                                <label class="text-sm font-semibold text-slate-400 ml-1">Link na moje video</label>
+                                <input type="url" name="Link_Na_Moje_Video" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="https://youtube.com/...">
                             </div>
                             <div class="space-y-3">
-                                <label class="text-sm font-semibold text-slate-400 ml-1">Časové rozmedzie (Timestamp)</label>
-                                <input type="text" name="Casove_Rozmedzie" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="napr. 01:20 - 01:45">
+                                <label class="text-sm font-semibold text-slate-400 ml-1">Časy (Timestampy)</label>
+                                <input type="text" name="Timestampy" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="napr. 0:45 - 1:10">
                             </div>
                         </div>
 
                         <div class="space-y-4">
-                            <label class="text-sm font-semibold text-slate-400 ml-1 block">Formát vášho projektu</label>
+                            <label class="text-sm font-semibold text-slate-400 ml-1 block">Čo z toho bude?</label>
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 <label class="cursor-pointer group">
-                                    <input type="radio" name="Format_Projektu" value="Shorts" class="peer hidden" required>
-                                    <div class="p-4 text-center rounded-2xl border border-white/5 bg-slate-900/40 hover:bg-slate-800/60 transition-all font-semibold text-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400 group-hover:scale-[1.02]">Shorts</div>
+                                    <input type="radio" name="Format" value="Shorts" class="peer hidden" required>
+                                    <div class="p-4 text-center rounded-2xl border border-white/5 bg-slate-900/40 hover:bg-slate-800/60 transition-all font-semibold text-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400">Shorts</div>
                                 </label>
                                 <label class="cursor-pointer group">
-                                    <input type="radio" name="Format_Projektu" value="Video" class="peer hidden">
-                                    <div class="p-4 text-center rounded-2xl border border-white/5 bg-slate-900/40 hover:bg-slate-800/60 transition-all font-semibold text-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400 group-hover:scale-[1.02]">Dlhý Formát</div>
+                                    <input type="radio" name="Format" value="Video" class="peer hidden">
+                                    <div class="p-4 text-center rounded-2xl border border-white/5 bg-slate-900/40 hover:bg-slate-800/60 transition-all font-semibold text-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400">Dlhšie video</div>
                                 </label>
                                 <label class="cursor-pointer group">
-                                    <input type="radio" name="Format_Projektu" value="TikTok" class="peer hidden">
-                                    <div class="p-4 text-center rounded-2xl border border-white/5 bg-slate-900/40 hover:bg-slate-800/60 transition-all font-semibold text-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400 group-hover:scale-[1.02]">TikTok</div>
+                                    <input type="radio" name="Format" value="TikTok" class="peer hidden">
+                                    <div class="p-4 text-center rounded-2xl border border-white/5 bg-slate-900/40 hover:bg-slate-800/60 transition-all font-semibold text-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400">TikTok</div>
                                 </label>
                                 <label class="cursor-pointer group">
-                                    <input type="radio" name="Format_Projektu" value="Ine" class="peer hidden">
-                                    <div class="p-4 text-center rounded-2xl border border-white/5 bg-slate-900/40 hover:bg-slate-800/60 transition-all font-semibold text-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400 group-hover:scale-[1.02]">Iné</div>
+                                    <input type="radio" name="Format" value="Ine" class="peer hidden">
+                                    <div class="p-4 text-center rounded-2xl border border-white/5 bg-slate-900/40 hover:bg-slate-800/60 transition-all font-semibold text-slate-500 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-400">Iné</div>
                                 </label>
                             </div>
                         </div>
 
                         <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-400 ml-1">Predpokladaný výnos (€)</label>
-                            <input type="text" name="Odhad_Monetizacie" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="Približný zárobok z videa">
-                        </div>
-
-                        <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-400 ml-1">Kontext a účel použitia</label>
-                            <textarea name="Ucel_Pouzitia" rows="4" required class="w-full input-glass rounded-2xl p-5 placeholder-slate-700 resize-none" placeholder="Vysvetlite, ako náš klip zapadá do vášho príbehu..."></textarea>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Sekcia 3: Záväzky -->
-                <section>
-                    <div class="flex items-center gap-5 mb-10">
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 ring-1 ring-emerald-500/20">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold tracking-tight">Kreditovanie</h3>
-                            <p class="text-sm text-slate-500">Dohoda o uvedení zdroja.</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="space-y-3">
-                            <label class="text-sm font-semibold text-slate-400 ml-1">Spôsob uvedenia zdroja (Credit)</label>
-                            <input type="text" name="Sposob_Creditovania" required class="w-full input-glass rounded-2xl p-4 placeholder-slate-700" placeholder="napr. Link v popise + meno tvorcu">
-                        </div>
-                        
-                        <div class="grid grid-cols-1 gap-4 pt-6">
-                            <label class="group flex items-start gap-4 p-6 bg-slate-900/30 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all cursor-pointer">
-                                <input type="checkbox" name="Suhlas_Uvedenie" required class="mt-1 w-5 h-5 accent-emerald-500">
-                                <div>
-                                    <p class="text-sm font-bold text-slate-200">Garancia označenia autora</p>
-                                    <p class="text-xs text-slate-500 mt-1">Zaväzujem sa jasne uviesť pôvodného autora v popise alebo vo videu.</p>
-                                </div>
-                            </label>
-                            <label class="group flex items-start gap-4 p-6 bg-slate-900/30 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all cursor-pointer">
-                                <input type="checkbox" name="Suhlas_Podmienky" required class="mt-1 w-5 h-5 accent-emerald-500">
-                                <div>
-                                    <p class="text-sm font-bold text-slate-200">Právna akceptácia</p>
-                                    <p class="text-xs text-slate-500 mt-1">Beriem na vedomie, že neoprávnené použitie bez certifikátu vedie k nahláseniu.</p>
-                                </div>
-                            </label>
-                            <label class="group flex items-start gap-4 p-6 bg-slate-900/30 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all cursor-pointer">
-                                <input type="checkbox" name="Suhlas_Finalne_Rozhodnutie" required class="mt-1 w-5 h-5 accent-emerald-500">
-                                <div>
-                                    <p class="text-sm font-bold text-slate-200">Potvrdenie schvaľovacieho procesu</p>
-                                    <p class="text-xs text-slate-500 mt-1">Súhlasím, že licencia je platná až po obdržaní unikátneho kódu.</p>
-                                </div>
-                            </label>
+                            <label class="text-sm font-semibold text-slate-400 ml-1">Prečo to chceš použiť?</label>
+                            <textarea name="Ucel" rows="4" required class="w-full input-glass rounded-2xl p-5 placeholder-slate-700 resize-none" placeholder="Napíš mi krátko, ako môj klip využiješ..."></textarea>
                         </div>
                     </div>
                 </section>
 
                 <div class="pt-8">
                     <button type="submit" class="btn-glow w-full py-7 bg-emerald-500 text-black font-black text-2xl rounded-3xl shadow-xl transition-all uppercase tracking-tight">
-                        Odoslať Žiadosť o Licenciu
+                        Poslať info autorovi
                     </button>
-                    <div class="flex justify-center items-center gap-3 mt-8 opacity-40">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                        <p class="text-center text-xs font-bold tracking-widest uppercase">End-to-end šifrovaný prenos</p>
-                    </div>
+                    <p class="text-center text-[10px] text-slate-600 mt-6 uppercase tracking-widest font-bold">Odpoveď dostaneš na zadaný e-mail</p>
                 </div>
 
             </form>
         </div>
 
         <!-- Footer -->
-        <footer class="mt-32 text-center space-y-10 pb-16">
-            <div class="flex justify-center gap-12 opacity-20 hover:opacity-50 transition-opacity">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="h-6 grayscale">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" alt="Instagram" class="h-6 grayscale">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/TikTok_logo.svg/2560px-TikTok_logo.svg.png" alt="TikTok" class="h-6 grayscale">
-            </div>
-            <div class="space-y-4">
-                <div class="h-px w-20 bg-emerald-500/20 mx-auto"></div>
-                <div class="text-slate-600 text-[10px] uppercase tracking-[0.4em] font-black">
-                    © 2024 Váš Kanál | Licenčná Platforma
-                </div>
+        <footer class="mt-24 text-center space-y-6 pb-16">
+            <div class="h-px w-20 bg-emerald-500/20 mx-auto"></div>
+            <div class="text-slate-600 text-[10px] uppercase tracking-[0.4em] font-black">
+                Kontakt pre tvorcov obsahu
             </div>
         </footer>
     </main>
